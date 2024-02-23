@@ -1,10 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 h1 {
     text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 6em;
+    cursor: pointer;
+}
+
+.gradient-text {
+    /* Fallback: Set a background color */
+    background-color: black;
+
+    /* Create the gradient */
+    background-image: linear-gradient(45deg, red 16.666%, green 16.666%, blue 33.333%, purple 33.333%, rgb(122, 174, 53) 50%, cyan 50%, yellow 66.666%, orange 66.666%, black 83.333%, #ff00ff 83.333%);
+    
+    /* Sets the background size and repeat properties */
+    background-size: 100%;
+    background-repeat: repeat;
+
+    /* Uses the text as a mask for the backround.
+        - This will show the gradient as a text color rather than element bg.
+    */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Animate the text when loading the element
+        - This animates it on page load when hovering out
+    */
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+.gradient-text:hover {
+    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+    40% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    80% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0px;
 }
 
 .marker {
-    background-color: red;
     height: 25px;
     width: 200px;
     margin: 10px auto;
+}
+
+.red {
+    background-color: rgb(0, 0, 0);
+}
+
+.blue {
+    background-color: rgb(0, 0, 0);
+}
+
+.green {
+    background-color: rgb(0, 0, 0);
 }
